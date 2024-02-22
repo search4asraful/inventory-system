@@ -76,7 +76,7 @@
                                         </div> <!--end form-group-->                           
                                     </form><!--end form-->
                                     <div class="m-3 text-center text-muted">
-                                        <p class="mb-0">Don't have an account ?  <a href="#" class="text-primary ms-2">Resister</a></p>
+                                        <p class="mb-0">Don't have an account ?  <a href="{{ url('/register') }}" class="text-primary ms-2">Resister</a></p>
                                     </div>
                                 </div><!--end card-body-->
                             </div><!--end card-->

@@ -358,7 +358,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="float-end">
-                                <select class="form-select shadow-none form-select-sm">
+                                <label for="month-select" class="d-none"></label>
+                                <select class="form-select shadow-none form-select-sm" id="month-select">
                                     <option selected>Apr</option>
                                     <option value="1">Mar</option>
                                     <option value="2">Feb</option>
