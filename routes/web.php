@@ -17,22 +17,24 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [AdminController::class, 'adminLoginFormShow'])->name('auth.login')->middleware('auth');
+Route::get('/', [AdminController::class, 'adminLoginFormShow'])->name('auth.login')->middleware('guest');
 
-Auth::routes();
+Auth::routes([
+    'verify' => true
+]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');
 
 Route::get('/categories', [CategoryController::class, 'showCategories'])->name('category.view');
 Route::get('/category/create', [CategoryController::class, 'categoryAddForm'])->name('category.add');
 Route::post('/category/store', [CategoryController::class, 'categoryStore'])->name('category.store');
-Route::get('/category/edit', [CategoryController::class, 'showCategoryEdit'])->name('category.edit');
+Route::get('/category/edit/{id}', [CategoryController::class, 'showCategoryEdit'])->name('category.edit');
 Route::post('/category/update/{id}', [CategoryController::class, 'categoryUpdate'])->name('category.update');
 Route::get('/category/delete/{id}', [CategoryController::class, 'categoryDestroy'])->name('category.delete');
 
 Route::get('/brands', [BrandController::class, 'showBrands'])->name('brand.view');
 Route::get('/brand/create', [BrandController::class, 'brandAddForm'])->name('brand.add');
 Route::post('/brand/store', [BrandController::class, 'brandStore'])->name('brand.store');
-Route::get('/brand/edit', [BrandController::class, 'showBrandEdit'])->name('brand.edit');
+Route::get('/brand/edit/{id}', [BrandController::class, 'showBrandEdit'])->name('brand.edit');
 Route::post('/brand/update/{id}', [BrandController::class, 'brandUpdate'])->name('brand.update');
 Route::get('/brand/delete/{id}', [BrandController::class, 'brandDestroy'])->name('brand.delete');

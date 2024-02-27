@@ -29,9 +29,9 @@ class BrandController extends Controller
         return redirect()->back();
     }
 
-    public function showBrandEdit()
+    public function showBrandEdit($id)
     {
-        $brand = Brand::first();
+        $brand = Brand::findOrFail($id);
         return view('backend.brand.edit', compact('brand'));
     }
     

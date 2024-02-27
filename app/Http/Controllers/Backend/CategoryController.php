@@ -29,9 +29,9 @@ class CategoryController extends Controller
         return redirect()->back();
     }
     
-    public function showCategoryEdit()
+    public function showCategoryEdit($id)
     {
-        $category = Category::first();
+        $category = Category::findOrFail($id);
         return view('backend.category.edit', compact('category'));
     }
     
