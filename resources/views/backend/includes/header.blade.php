@@ -214,8 +214,7 @@
 
                         <a href="#" class="text-reset notification-item">
                             <div class="d-flex">
-                                <img src="{{ asset('/backend/') }}/assets/images/users/avatar-4.jpg"
-                                    class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                <img src="{{ asset('/backend/') }}/assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-1">
                                     <h6 class="mb-1">Salena Layfield</h6>
                                     <div class="font-size-12 text-muted">
@@ -239,8 +238,11 @@
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{ asset('/backend/') }}/assets/images/users/avatar-1.jpg"
-                        alt="Header Avatar">
+                    @if(Auth::check() && file_exists(public_path('images/'.Auth::user()->image)))
+                        <img class="rounded-circle header-profile-user" src="{{ asset('images/'.Auth::user()->image) }}" alt="User Image">
+                    @else
+                        <img class="rounded-circle header-profile-user" src="{{ asset('/backend/') }}/assets/images/users/avatar-2.jpg" alt="Header Avatar">
+                    @endif
                     <span class="d-none d-xl-inline-block ms-1">{{ Auth::user()->name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
