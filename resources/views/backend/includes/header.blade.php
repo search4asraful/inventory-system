@@ -238,7 +238,7 @@
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @if(Auth::check() && file_exists(public_path('images/'.Auth::user()->image)))
+                    @if(Auth::check() && file_exists(public_path('images/'.Auth::user()->image)) && Auth::user()->image !== null)
                         <img class="rounded-circle header-profile-user" src="{{ asset('images/'.Auth::user()->image) }}" alt="User Image">
                     @else
                         <img class="rounded-circle header-profile-user" src="{{ asset('/backend/') }}/assets/images/users/avatar-2.jpg" alt="Header Avatar">
