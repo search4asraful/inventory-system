@@ -18,10 +18,9 @@ class CategoryService
             'slug' => Str::slug($request->name),
         ]);
     }
-    public function categoryUpdateService($request, $id)
-    {
-        $category = Category::find($id);
 
+    public function categoryUpdateService($category, $request)
+    {
         if($request->hasFile('image')){
             if(file_exists(public_path('images/category/'.$category->image))){
                 unlink(public_path('images/category/'.$category->image));
@@ -30,9 +29,9 @@ class CategoryService
             $request->image->move('images/category/',$imageName);
             $category->image = $imageName;
         }
-
         $category->name = $request->name;
+        $category->slug = Str::slug($request->name);
 
-        $category->save();
+        $category->update();
     }
 }

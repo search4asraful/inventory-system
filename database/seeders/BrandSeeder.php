@@ -31,5 +31,11 @@ class BrandSeeder extends Seeder
             'image' => 'lavaLogo.png',
             'slug' => Str::slug('lava'),
         ]);
+
+        Brand::create([
+            'name' => 'Corsair',
+            'image' => 'Corsair.png',
+            'slug' => Str::slug('corsair'),
+        ]);
     }
 }

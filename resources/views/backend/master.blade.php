@@ -40,5 +40,7 @@
 
     <!-- JAVASCRIPT -->
     @include('backend.includes.script')
+
+    @stack('script')
 </body>
 </html>

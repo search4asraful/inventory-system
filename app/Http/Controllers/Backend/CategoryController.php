@@ -37,7 +37,8 @@ class CategoryController extends Controller
     
     public function categoryUpdate(CategoryUpdateRequest $request, CategoryService $services, $id)
     {
-        $services->categoryStoreService($request, $id);
+        $category = Category::find($id);
+        $services->categoryUpdateService($category, $request);
 
         $this->setMessage('info', 'category has been updated.');
         return redirect()->back();
