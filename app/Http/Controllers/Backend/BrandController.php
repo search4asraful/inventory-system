@@ -37,7 +37,8 @@ class BrandController extends Controller
     
     public function brandUpdate(BrandUpdateRequest $request, BrandService $services, $id)
     {
-        $services->BrandUpdateService($request, $id);
+        $brand = Brand::find($id);
+        $services->BrandUpdateService($brand, $request);
 
         $this->setMessage('info', 'brand has been updated.');
         return redirect()->back();

@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Brands</h4>
+                            <h4 class="mb-sm-0">Brand add</h4>
 
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
@@ -35,10 +35,6 @@
                                 </div>
                             @endif
                             <div class="card-body">
-                                <p class="card-title-desc">Parsley is a javascript form validation
-                                    library. It helps you provide your users with feedback on their form
-                                    submission before sending it to your server.</p>
-                
                                 <form class="custom-validation" action="{{ route('brand.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">

@@ -19,10 +19,8 @@ class BrandService
         ]);
     }
 
-    public function BrandUpdateService($request, $id)
+    public function BrandUpdateService($brand, $request)
     {
-        $brand = Brand::find($id);
-
         if($request->hasFile('image')){
             if(file_exists(public_path('images/brand/'.$brand->image))){
                 unlink(public_path('images/brand/'.$brand->image));
@@ -33,7 +31,8 @@ class BrandService
         }
 
         $brand->name = $request->name;
+        $brand->slug = Str::slug($request->name);
 
-        $brand->save();
+        $brand->update();
     }
 }
