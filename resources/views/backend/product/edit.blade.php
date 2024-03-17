@@ -14,7 +14,7 @@
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
                                     <li class="breadcrumb-item">product</li>
-                                    <li class="breadcrumb-item active">Add</li>
+                                    <li class="breadcrumb-item active">Edit</li>
                                 </ol>
                             </div>
 
@@ -36,7 +36,7 @@
                             @endif
                             <div class="card-body">
                                 <div class="mb-3 text-center">
-                                    <img src="{{ asset('/images/product/'.$product->image) }}" style="width: auto; height: 250px; object-fit: cover" alt="Product previous image">
+                                    <img src="{{ asset('/images/product/'.$product->image) }}" style="width: auto; height: 100%; max-height: 200px; object-fit: cover" alt="Product previous image">
                                 </div>
                                 <form class="custom-validation" action="{{ route('product.update',$product->id) }}" method="POST" enctype="multipart/form-data">
                                     @csrf

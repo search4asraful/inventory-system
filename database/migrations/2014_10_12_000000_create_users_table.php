@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('image')->nullable();
             $table->string('type')->default('staff');
+            $table->boolean('is_terms_condition')->nullable(); 
             $table->boolean('is_active')->default(true);
             $table->rememberToken();
             $table->timestamps();
