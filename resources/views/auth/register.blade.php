@@ -72,7 +72,7 @@
                                         <div class="form-group row mt-3">
                                             <div class="col-12">
                                                 <div class="form-check form-switch form-switch-success">
-                                                    <input class="form-check-input" type="checkbox" id="customSwitchSuccess">
+                                                    <input class="form-check-input" name="is_terms_condition" type="checkbox" id="customSwitchSuccess">
                                                     <label class="form-check-label" for="customSwitchSuccess">By registering you agree to the {{ config('app.name') }} <a href="#" class="text-primary">Terms of Use</a></label>
                                                 </div>
                                             </div><!--end col--> 
