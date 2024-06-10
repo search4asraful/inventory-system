@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\SaleController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,3 +47,5 @@ Route::post('/product/store', [ProductController::class, 'productStore'])->name(
 Route::get('/product/edit/{id}', [ProductController::class, 'productEdit'])->name('product.edit');
 Route::post('/product/update/{id}', [ProductController::class, 'productUpdate'])->name('product.update');
 Route::get('/product/delete/{id}', [ProductController::class, 'productDestroy'])->name('product.delete');
+
+Route::get('/product/sales', [SaleController::class, 'productSales'])->name('sale.index');

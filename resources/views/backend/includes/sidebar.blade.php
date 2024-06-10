@@ -49,6 +49,17 @@
                         <li><a href="{{ route('product.create') }}">Add Product</a></li>
                     </ul>
                 </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Sales</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('sale.index') }}">Sale</a></li>
+                        {{-- <li><a href="{{ route('product.create') }}">Add Product</a></li> --}}
+                    </ul>
+                </li>
                 
                 <li class="menu-title">Layaout</li>
                 
